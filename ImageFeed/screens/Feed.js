@@ -47,6 +47,8 @@ export default class Feed extends React.Component {
     };
 
 
+    
+
     render(){
         const {commentsForItem, onPressComments,style} =this.props;
         const {loading,error,items} =this.state;
