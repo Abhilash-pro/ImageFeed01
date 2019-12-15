@@ -11,24 +11,18 @@ import AuthorRow from './AuthorRow';
 
 export default class Card extends React.Component {
     static propTypes = {
-        fullname: PropTypes.string.isRequried,
-        image: Image.propTypes.source.isRequrired,
-        linkText: PropTypes.string,
-        onPressLinkText: PropTypes.func,
+        fullname: PropTypes.string.isRequired,
+        image: Image.propTypes.source.isRequired,
+        linkText: PropTypes.string.isRequired,
+        onPressLinkText: PropTypes.func.isRequired,
     };
-    static defaultProps = {
-        linkText: '',
-        onPressLinkText: () => {},
-    };
-
-
     state  = {
         loading:true,
     };
     handleLoad =()=>{
         this.setState({loading: false });
     };
-
+    
     render(){
         const {fullname, image, linkText, onPressLinkText } =this.props;
         const {loading} =this.state; 
@@ -48,7 +42,7 @@ export default class Card extends React.Component {
                         />
                     )}
                      <Image
-                        style = {styles.image}
+                        style = {styles.absoluteFill}
                         source = {image}
                         onLoad = {this.handleLoad}
                         />
